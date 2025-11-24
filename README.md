@@ -1,5 +1,8 @@
 # KA-GNN
 
+Use python 3.11     
+
+
 conda env create -f environment.yml  
 conda activate ka_gnn_cpu  
   
