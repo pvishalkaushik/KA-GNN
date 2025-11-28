@@ -3,8 +3,8 @@
 git clone https://github.com/pvishalkaushik/KA-GNN.git      
             
 cd KA-GNN         
-pyenv install 3.11       
-pyenv virtualenv 3.11 ka_gnn       
+pyenv install 3.11.0       
+pyenv virtualenv 3.11.0 ka_gnn       
 pyenv local ka_gnn       
 pip install -r requirements.txt      
           
