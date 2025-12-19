@@ -60,13 +60,17 @@ def main():
     parser.add_argument("--model_path", type=str, default=None,
                         help="Optional: custom model path. If not provided, use ./models/{task}.pth")
     parser.add_argument("--config", type=str, default="./config/c_path.yaml", help="Config yaml file")
+    parser.add_argument("--cpu", action="store_true", help="Force CPU mode (ignore GPU)")
     args = parser.parse_args()
 
     # Load config
     with open(args.config, "r") as f:
         config = yaml.safe_load(f)
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if args.cpu:
+        device = torch.device("cpu")
+    else:
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
     task = args.task.lower()
